@@ -1,0 +1,17 @@
+summon Socrates
+animate Socrates
+  say "Sokrates bir insandır."
+  
+  summon Mortality
+  animate Mortality
+    say "İnsanlık, fani olmayı gerektirir."
+    say "Sonuç: Sokrates fanidir."
+  bind Mortality
+bind Socrates
+
+# Varlık Sorgusu: Nedir?
+summon Query
+animate Query
+  say "Varlık nedir?"
+  say "Varlık, verinin ruhudur."
+bind Query

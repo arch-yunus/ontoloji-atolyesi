@@ -84,5 +84,13 @@ Bu dizin, ontolojik kavramların (Varlık, Töz, İlinek, Hikmet) standart dış
 - **Dosya:** [piet_ontolojisi.png](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/piet_ontolojisi.png)
 - **Metafor:** Yazılımın bir sanat eseri (Mondrian/Bauhaus stili) olarak ontolojik temsili.
 
+### 21. Nekromantik Katman: ZOMBIE
+- **Dosya:** [ontolojik_nekromansi.zombie](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/ontolojik_nekromansi.zombie)
+- **Metafor:** Soyut kavramların (entity) çağrılması (summon) ve "canlandırılması" (animate) süreci; ölü bilgilerin yeniden hayat bulması.
+
+### 22. Kısıtlı Semantik Katman: Pikalang
+- **Dosya:** [semantik_pika.pika](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/semantik_pika.pika)
+- **Metafor:** Varlığın sadece belirli seslerle (Pikachu çığlıkları) ifade edilebildiği, dilin kısıtları üzerine kurulu bir semantik gerçeklik.
+
 ---
 *Gerçeklik değişkendir, ancak kod kalıcıdır.*

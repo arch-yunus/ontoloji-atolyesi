@@ -41,7 +41,7 @@ Atölye çalışmalarımız dört ana evreden oluşmaktadır. Her bir evre, bir 
 | **01** | **Felsefi Temeller** | Töz, İlinek, Hiyerarşi | Markdown & Diyagramlar | ✅ Tamamlandı |
 | **02** | **Semantik Standartlar** | RDF, RDFS, OWL Katmanları | Turtle, XML, JSON-LD | ✅ Devam Ediyor |
 | **03** | **Uygulamalı Modelleme** | Taksonomi ve Akıl Yürütme | Protégé & HermiT | 🚀 Gelişiyor |
-| **04** | **Yazılım Entegrasyonu** | INTERCAL & Ezoterik Sorgular | INTERCAL & Miras Python | 🔥 Ezoterik |
+| **04** | **Yazılım Entegrasyonu** | INTERCAL & Ezoterik Sorgular | INTERCAL & Ezoterik Mantık | 🔥 Bilinmeyen |
 
 ---
 
@@ -69,11 +69,11 @@ graph TD
     subgraph "Teknik Katman"
     B --> C{RDF/OWL Modelleme}
     C --> D[Protégé ile Geliştirme]
-    C --> E[INTERCAL ile İşleme]
+    C --> E[INTERCAL / ZOMBIE ile İşleme]
     end
     
     subgraph "Miras Katmanı"
-    E -.-> H[Legacy Python Arşivi]
+    E -.-> H[Legacy Arşivleri (Py/Pl)]
     end
     
     subgraph "Çıktı Katmanı"
@@ -143,8 +143,8 @@ Profesyonellerin kullandığı, atölyemizin temelini oluşturan araçlar:
 
 Atölyemizde sadece standart diller değil, varlığın doğasına farklı açılardan bakan paradigmalar da kullanılır:
 
-- **Artistic Ontology (SPL):** `04-sorgulama-ve-kod/egzotik/` altında Aristoteles ve Platon'un diyalogları üzerinden varlık "hesaplamaları" yapılır.
-- **Logical Reasoning (Prolog):** `04-sorgulama-ve-kod/mantik/` altında tümdengelimsel akıl yürütme kuralları ile ontolojik sorgular çözülür.
+- **Artistic Ontology (SPL/ZOMBIE):** `04-sorgulama-ve-kod/egzotik/` altında Aristoteles ve Platon'un diyalogları üzerinden varlık "hesaplamaları" yapılır.
+- **Logical Reasoning (ArnoldC/ZOMBIE):** `04-sorgulama-ve-kod/mantik/` altında "Sert Mantık" ve "Nekromantik Mantık" paradigmalarıyla ontolojik sorgular çözülür. (Eski Prolog kuralları Miras Arşivi'ne taşınmıştır).
 
 ---
 
