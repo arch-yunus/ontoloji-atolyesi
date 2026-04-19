@@ -1,0 +1,29 @@
+# 1. Tüm Sınıfları Listele
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?class
+WHERE {
+  ?class rdf:type owl:Class .
+}
+
+# ---
+
+# 2. Ürünleri ve Kategorilerini Getir (E-Ticaret Ontolojisi İçin)
+PREFIX etic: <http://www.example.org/ontologies/e-ticaret#>
+
+SELECT ?urun ?kategori
+WHERE {
+  ?urun etic:kategorisindedir ?kategori .
+}
+
+# ---
+
+# 3. İnsanlar Arasındaki Ebeveyn-Çocuk İlişkisini Listele (Aile Ağacı İçin)
+PREFIX aile: <http://www.example.org/ontologies/aile-agaci#>
+
+SELECT ?ebeveyn ?cocuk
+WHERE {
+  ?ebeveyn aile:ebeveynidir ?cocuk .
+}
