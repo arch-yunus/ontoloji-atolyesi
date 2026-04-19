@@ -33,6 +33,8 @@ MIZAN_DIZINI: str = os.path.join(os.path.dirname(PROJE_DIZINI), "03-modelleme-pr
 
 AILE_OWL: str = os.path.join(MIZAN_DIZINI, "aile-agaci.owl")
 ETICARET_OWL: str = os.path.join(MIZAN_DIZINI, "e-ticaret.owl")
+EGZOTIK_DIZIN: str = os.path.join(PROJE_DIZINI, "egzotik")
+
 
 class MetaOntolojiZehni:
     """Varlığın dijital izdüşümlerini (ontolojileri) işleyen üst-akıl aracı."""
@@ -103,6 +105,23 @@ class MetaOntolojiZehni:
             console.print(f"[bold red]Sorgu hatası:[/bold red] {str(e)}")
             return []
 
+    def egzotik_laboratuvar_ozeti(self) -> None:
+        """Egzotik dillerdeki ontolojik deneyleri listeler."""
+        if not os.path.exists(EGZOTIK_DIZIN):
+            return
+
+        table = Table(title="🧪 Egzotik Ontoloji Laboratuvarı", show_header=True, header_style="bold yellow")
+        table.add_column("Dil / Uzantı", style="magenta")
+        table.add_column("Dosya Adı", style="cyan")
+
+        dosyalar = [f for f in os.listdir(EGZOTIK_DIZIN) if os.path.isfile(os.path.join(EGZOTIK_DIZIN, f)) and f != "README.md"]
+        for dosya in sorted(dosyalar):
+             uzanti = dosya.split('.')[-1].upper()
+             table.add_row(uzanti, dosya)
+
+        console.print(Panel(table, title="[bold red]KRİTİK VERİ[/bold red]", subtitle="Alternatif Gerçeklikler", border_style="red"))
+
+
 def main():
     console.clear()
     console.print(Panel.fit("🌌 [bold white]META-ONTOLOJİ İŞLEYİCİ v2.0[/bold white] 🌌\n[dim]Varlık, Bilgi ve Hakikat Üzerine Bir Algoritmik Yolculuk[/dim]", border_style="purple"))
@@ -149,6 +168,10 @@ def main():
                 console.print(res_table)
             else:
                 console.print("[yellow]⚠️ Bu ontolojik katmanda henüz veri bulunamadı.[/yellow]")
+
+            if EGZOTIK_MOD:
+                akil.egzotik_laboratuvar_ozeti()
+
 
     except Exception as e:
         console.print(f"[bold red]Kritik Hata:[/bold red] {str(e)}")

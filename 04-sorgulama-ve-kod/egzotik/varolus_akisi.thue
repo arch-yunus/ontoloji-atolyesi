@@ -1,7 +1,15 @@
 # Varlık Akışı - Thue Meta Ontolojisi
-Hiclik::=Varlik
-Varlik::=Töz
-Töz::=Akis
-Akis::=Hakikat
+# Ham veri hakikate dönüşür.
+
+HamVeri::=OntolojiYükleniyor
+OntolojiYükleniyor::=VarlıkAnalizEdiliyor
+VarlıkAnalizEdiliyor::=~Sınıflar ve Bireyler Ayrıştırılıyor...
+Sınıflar::=~Ontolojik Sınıf Tespit Edildi.
+Bireyler::=~Tekil Varlık Tanımlandı.
+Hakikat::=~Varlığın Özü Açığa Çıktı: BİR.
+
 ::=
-Hiclik
+HamVeri
+Sınıflar
+Bireyler
+Hakikat
