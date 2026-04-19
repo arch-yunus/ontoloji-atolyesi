@@ -1,40 +1,47 @@
-# 🛠️ Ontoloji Atölyesi (ontoloji-atolyesi)
+# 🧠 Ontoloji Atölyesi (ontoloji-atolyesi)
+> **"Varlığı Veriye, Veriyi Bilgiye Dönüştürme Merkezi"**
 
-Bu depo, insan düşüncesinin en eski dallarından biri olan **Ontoloji**'yi, modern dünyanın en ileri teknolojileriyle (Yapay Zeka, Bilgi Mühendisliği, Semantik Web) birleştirmek ve bu alanda derinlemesine uzmanlaşmak için kurulmuş bir öğrenme ve uygulama merkezidir.
-
-"Varlık nedir?" sorusundan yola çıkıp, "Bir bilgisayara dünyayı nasıl anlatırız?" sorusuna yanıt arıyoruz.
-
----
-
-## 🚀 Projenin Vizyonu
-
-Ontoloji sadece felsefi bir tartışma değil; verinin anlam kazandığı, sistemlerin birbiriyle konuştuğu ve yapay zekanın "mantık yürütebildiği" bir mimari yapıdır. Bu atölyede:
-- Soyut kavramları somut modellere dönüştürüyoruz.
-- Veri arasındaki gizli ilişkileri tanımlıyoruz.
-- Bilgiyi, bilgisayarların işleyebileceği bir hiyerarşiye oturtuyoruz.
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
+[![Topic](https://img.shields.io/badge/Topic-Ontology_&_Semantics-blue.svg)]()
+[![Tools](https://img.shields.io/badge/Tools-Protege_&_RDFLib-orange.svg)]()
 
 ---
 
-## 📚 Atölye İçeriği ve Müfredat
+## 🚀 Vizyon
 
-Bu depo 4 ana fazdan oluşmaktadır. Her klasör kendi içinde ders notları, diyagramlar ve uygulama dosyaları barındırır:
+"Varlık nedir?" sorusundan yola çıkıp, "Bir bilgisayara dünyayı nasıl anlatırız?" sorusuna yanıt arıyoruz. Bu atölye, felsefi ontolojiyi modern dünya teknolojileriyle (Yapay Zeka, Bilgi Mühendisliği, Semantik Web) harmanlayan derinlemesine bir öğrenme yolculuğudur.
 
-### 1. Faz: Teorik Temeller (Felsefi Bakış)
-- **[Ontolojinin Temel Kavramları](01-teori-ve-felsefe/temel-kavramlar.md):** Töz, ilinek, evrenseller ve tikeller.
-- **[Hiyerarsik Düşünme](01-teori-ve-felsefe/hiyerarsik-dusunme.md):** Taksonomi ve Meronimi (parça-bütün ilişkisi) farkı.
+---
 
-### 2. Faz: Bilgi Temsili (Knowledge Representation)
-- **[RDF ve RDFS'e Giriş](02-teknik-standartlar/rdf-rdfs-giris.md):** Semantik Web standartları ve Üçlü (Triple) yapısı.
-- **[OWL Rehberi](02-teknik-standartlar/owl-rehberi.md):** Mantıksal çıkarım yapabilen gelişmiş ontoloji dili.
+## 📚 Müfredat Yol Haritası
 
-### 3. Faz: Uygulama ve Modelleme
-- **Örnek Modeller:** Protégé uyumlu `.owl` projeleri.
-  - [Aile Ağacı](03-modelleme-projeleri/aile-agaci.owl)
-  - [E-Ticaret](03-modelleme-projeleri/e-ticaret.owl)
+| Aşama | Başlık | İçerik | Detay |
+| :--- | :--- | :--- | :--- |
+| **01** | **Teorik Temeller** | Töz, İlinek, Evrenseller | [İncele](01-teori-ve-felsefe/temel-kavramlar.md) |
+| **02** | **Teknik Standartlar** | RDF, RDFS, OWL | [İncele](02-teknik-standartlar/rdf-rdfs-giris.md) |
+| **03** | **Modelleme** | Aile Ağacı, E-Ticaret | [İncele](03-modelleme-projeleri/) |
+| **04** | **Sorgulama** | SPARQL & Python | [İncele](04-sorgulama-ve-kod/) |
 
-### 4. Faz: Sorgulama ve Kod
-- **[SPARQL Sorguları](04-sorgulama-ve-kod/ornek-sorgular.sparql):** Ontolojiler üzerinde sorgu çalıştırma.
-- **[Python ile Ontoloji Yönetimi](04-sorgulama-ve-kod/ontoloji_isleyici.py):** `rdflib` kütüphanesi ile programatik etkileşim.
+---
+
+## 🏗️ Örnek Ontoloji Hiyerarşisi
+
+Sistemlerimizde sınıflar arası ilişkileri (Taksonomi) ve parça-bütün ilişkilerini (Meronimi) şu şekilde modelliyoruz:
+
+```mermaid
+graph TD
+    V[Varlık/Thing] --> C[Canlı]
+    C --> H[Hayvan]
+    H --> M[Memeli]
+    M --> K[Kedi]
+    
+    subgraph "Meronimi (Parça-Bütün)"
+    K --- P[Patiler]
+    K --- G[Gözler]
+    end
+    
+    style K fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ---
 
@@ -42,34 +49,30 @@ Bu depo 4 ana fazdan oluşmaktadır. Her klasör kendi içinde ders notları, di
 
 ```text
 ontoloji-atolyesi/
-├── 01-teori-ve-felsefe/       # Makaleler, kavram haritaları ve temel terminoloji
-├── 02-teknik-standartlar/     # RDF, OWL ve XML şemaları üzerine teknik notlar
+├── 01-teori-ve-felsefe/       # Makaleler ve temel terminoloji
+├── 02-teknik-standartlar/     # RDF, OWL teknik notlar
 ├── 03-modelleme-projeleri/    # .owl uzantılı örnek projeler
-├── 04-sorgulama-ve-kod/       # SPARQL sorguları ve Python uygulamaları
-├── docs/                      # Faydalı kaynaklar ve dış bağlantılar
-└── README.md                  # Şu an buradasınız
+├── 04-sorgulama-ve-kod/       # SPARQL ve Python uygulamaları
+└── docs/                      # Faydalı kaynaklar
 ```
 
 ---
 
-## 🛠️ Kullanılan Araçlar ve Gereksinimler
+## 🛠️ Kullanılan Araçlar
 
-1. **[Protégé Desktop](https://protege.stanford.edu/):** Ontoloji tasarlamak için olmazsa olmaz.
-2. **Python:** Ontolojileri yönetmek için `rdflib` kütüphanesi.
+1. **[Protégé Desktop](https://protege.stanford.edu/):** Dünyanın en popüler açık kaynak ontoloji editörü.
+2. **Python `rdflib`:** Ontolojileri kod ile yönetmek için.
    ```bash
    pip install rdflib
    ```
 
 ---
 
-## 💡 Katkıda Bulunma
+## 🤝 Katkıda Bulunma
 
-Bu bir açık atölyedir! 
-- Yeni bir ontoloji modeli eklemek, 
-- Teknik bir terimi açıklamak,
-- Hatalı bir mantıksal çıkarımı düzeltmek isterseniz...
-
-Lütfen bir **Pull Request** gönderin veya bir **Issue** açın. Birlikte daha tutarlı bir dünya inşa edelim!
+Bu bir açık atölyedir! Farklı alanlarda (E-ticaret, Tıp, Mimari vb.) ontoloji modelleri eklemek isterseniz lütfen Pull Request gönderin.
 
 ---
-*"Sözcükler arasındaki ilişkiler, dünyanın dokusunu oluşturur."*
+<p align="center">
+  <i>"Sözcükler arasındaki ilişkiler, dünyanın dokusunu oluşturur."</i>
+</p>
