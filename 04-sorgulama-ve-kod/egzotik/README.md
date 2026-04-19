@@ -56,5 +56,37 @@ Bu dizin, ontolojik kavramların (Varlık, Töz, İlinek, Hikmet) standart dış
 - **Dosya:** [semantik_varlik.emojic](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/semantik_varlik.emojic)
 - **Metafor:** Modern dünyanın sembolik ve piktografik ontolojisi.
 
+### 14. Dinamik Dönüşüm Katmanı: Thue
+- **Dosya:** [ontolojik_rewriting.thue](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/ontolojik_rewriting.thue)
+- **Metafor:** Varlığın bir durumdan diğerine sürekli dönüşümü; "oluş" (becoming) ontolojisi.
+
+### 15. Hecesel Hakikat Katmanı: Aheui
+- **Dosya:** [hakikat_heceleri.aheui](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/hakikat_heceleri.aheui)
+- **Metafor:** Varlığın farklı dillerde ve alfabelerde bile değişmeyen özü; fonetik ontoloji.
+
+### 16. İşlevsel Hiçlik Katmanı: Unlambda
+- **Dosya:** [islevsel_hiclik.unlambda](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/islevsel_hiclik.unlambda)
+- **Metafor:** Değişkenlerin ve isimlerin ötesindeki saf fonksiyonellik; Hiçlik'in matematiksel izdüşümü.
+
+### 14. Fraktal Katman: Hexagony
+- **Dosya:** [ontolojik_fraktal.hexagony](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/ontolojik_fraktal.hexagony)
+- **Metafor:** Varlığın bir fraktal gibi, her parçasında bütünü taşıyan altıgen yapısı.
+
+### 15. Yoğunluk Katmanı: 05AB1E
+- **Dosya:** [bilgi_yogunlugu.05ab1e](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/bilgi_yogunlugu.05ab1e)
+- **Metafor:** Çok büyük bilginin çok küçük hacimlere sıkıştırılmasıyla oluşan ontolojik tekillik.
+
+### 16. Akış Katmanı: Thue
+- **Dosya:** [varolus_akisi.thue](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/varolus_akisi.thue)
+- **Metafor:** Her şeyin bir değişim ve dönüşüm (string rewriting) süreci olduğu Herakleitosyen akış.
+
+### 17. Kristalizasyon Katmanı: Jelly
+- **Dosya:** [anlam_kristalizasyonu.jelly](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/anlam_kristalizasyonu.jelly)
+- **Metafor:** Anlamın kristalleşerek en saf ve yoğun formuna ulaşması.
+
+### 18. Antik Mantık Katmanı: False
+- **Dosya:** [antik_mantik.false](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/antik_mantik.false)
+- **Metafor:** Yığın tabanlı (stack-based) düşüncenin ilk ve kaba örneklerinden biri; mantığın yalın kökleri.
+
 ---
 *Gerçeklik değişkendir, ancak kod kalıcıdır.*

@@ -1,13 +1,18 @@
 import os
 import sys
 import logging
-from typing import Optional, List
+import random
+from typing import Optional, List, Dict
 from rdflib import Graph, Namespace, RDF, OWL
 from rdflib.query import ResultRow
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn
+from rich.layout import Layout
+from rich.live import Live
+from rich.text import Text
+from rich.align import Align
 
 # Windows terminal encoding fix
 if sys.platform == "win32":
@@ -15,7 +20,11 @@ if sys.platform == "win32":
 
 console = Console()
 
-# Logging Yapılandırması (Hidden for cleaner TUI)
+# Exotic Mode Flag
+EGZOTIK_MOD: bool = "--egzotik" in sys.argv
+
+
+# Logging Yapılandırması
 logging.basicConfig(level=logging.CRITICAL)
 
 # Ontoloji dosyalarının yolları
@@ -44,19 +53,19 @@ class MetaOntolojiZehni:
             TextColumn("[progress.description]{task.description}"),
             transient=True,
         ) as progress:
-            progress.add_task(description=f"Ontoloji yükleniyor: {os.path.basename(self.dosya_yolu)}...", total=None)
+            progress.add_task(description=f"🌌 Ontolojik düzlem yükleniyor: {os.path.basename(self.dosya_yolu)}...", total=None)
             try:
                 self.g.parse(self.dosya_yolu, format="xml")
             except Exception as e:
-                console.print(f"[bold red]Yükleme hatası:[/bold red] {str(e)}")
+                console.print(f"[bold red]Tezahür hatası:[/bold red] {str(e)}")
                 raise
 
-    def hakikat_ozeti(self) -> None:
+    def hakikat_ozeti(self) -> Panel:
         """Ontolojinin özünü (summary) görsel bir tablo ile sunar."""
         
-        table = Table(title=f"📜 {os.path.basename(self.dosya_yolu)} Analiz Raporu", show_header=True, header_style="bold magenta")
-        table.add_column("Metrik", style="cyan")
-        table.add_column("Değer", style="green")
+        table = Table(show_header=True, header_style="bold cyan", box=None)
+        table.add_column("Metrik", style="dim")
+        table.add_column("Değer", style="bold green")
 
         table.add_row("Toplam Üçlü (Triple)", str(len(self.g)))
         
@@ -66,21 +75,27 @@ class MetaOntolojiZehni:
         bireyler = list(self.g.subjects(RDF.type, OWL.NamedIndividual))
         table.add_row("Birey Sayısı", str(len(bireyler)))
 
-        console.print(Panel(table, expand=False, border_style="bright_blue"))
+        return Panel(table, title=f"📜 {os.path.basename(self.dosya_yolu)} Yapısı", border_style="bright_blue")
 
-        if siniflar:
-            console.print("\n[bold yellow]🔹 Öne Çıkan Sınıflar:[/bold yellow]")
-            for i, s in enumerate(siniflar[:5]):
-                 console.print(f"  {i+1}. [italic]{s}[/italic]")
+    def hikmet_uret(self) -> Panel:
+        """Ontolojik veriden rastgele felsefi çıkarımlar üretir."""
+        siniflar = [str(s).split('#')[-1] for s in self.g.subjects(RDF.type, OWL.Class) if '#' in str(s)]
+        if not siniflar:
+             siniflar = ["Varlık", "Kavram", "Töz"]
         
-        if bireyler:
-            console.print("\n[bold yellow]🔹 Öne Çıkan Bireyler:[/bold yellow]")
-            for i, b in enumerate(bireyler[:5]):
-                 console.print(f"  {i+1}. [italic]{b}[/italic]")
+        sablonlar = [
+            "İncelediğimiz [bold yellow]{0}[/bold yellow] kavramı, sistemin temel direğidir.",
+            "Eğer [bold yellow]{0}[/bold yellow] olmasaydı, ontolojik bütünlük bozulurdu.",
+            "Sistemdeki [bold yellow]{0}[/bold yellow] varlığı, hiyerarşinin üst basamaklarını işaret eder.",
+            "Dijital evrende [bold yellow]{0}[/bold yellow], tözün bir yansımasıdır.",
+            "[bold yellow]{0}[/bold yellow] ve diğer ilinekler, varlığın tezahür biçimleridir."
+        ]
+        
+        insight = random.choice(sablonlar).format(random.choice(siniflar))
+        return Panel(Align.center(insight), title="🧠 Ontolojik Hikmet", border_style="magenta")
 
     def derin_sorgu(self, sorgu: str) -> List[ResultRow]:
         """SPARQL ile varlığın derinliklerine iner."""
-        console.print("\n[bold cyan]🔍 Hakikat aranıyor (SPARQL)...[/bold cyan]")
         try:
             results = self.g.query(sorgu)
             return list(results)
@@ -88,14 +103,30 @@ class MetaOntolojiZehni:
             console.print(f"[bold red]Sorgu hatası:[/bold red] {str(e)}")
             return []
 
-if __name__ == "__main__":
-    console.print(Panel.fit("🌌 [bold white]META-ONTOLOJİ İŞLEYİCİ[/bold white] 🌌\n[dim]Varlığın Dijital Temsili Üzerine Bir Araştırma[/dim]", border_style="purple"))
+def main():
+    console.clear()
+    console.print(Panel.fit("🌌 [bold white]META-ONTOLOJİ İŞLEYİCİ v2.0[/bold white] 🌌\n[dim]Varlık, Bilgi ve Hakikat Üzerine Bir Algoritmik Yolculuk[/dim]", border_style="purple"))
     
     try:
         # Aile Ontolojisi Analizi
         if os.path.exists(AILE_OWL):
             akil = MetaOntolojiZehni(AILE_OWL)
-            akil.hakikat_ozeti()
+            
+            # TUI Layout
+            layout = Layout()
+            layout.split_column(
+                Layout(name="upper"),
+                Layout(name="lower")
+            )
+            layout["upper"].split_row(
+                Layout(name="ozet"),
+                Layout(name="insight")
+            )
+            
+            layout["ozet"].update(akil.hakikat_ozeti())
+            layout["insight"].update(akil.hikmet_uret())
+            
+            console.print(layout)
             
             # SPARQL Sorgusu
             sorgu = """
@@ -108,17 +139,20 @@ if __name__ == "__main__":
             sonuclar = akil.derin_sorgu(sorgu)
             
             if sonuclar:
-                res_table = Table(title="✅ Sorgu Sonuçları", show_header=True, header_style="bold green")
+                res_table = Table(title="🔍 Hakikat Sorgusu: Ebeveyn-Çocuk İlişkileri", show_header=True, header_style="bold green")
                 res_table.add_column("Ebeveyn", style="blue")
                 res_table.add_column("Çocuk", style="yellow")
                 
-                for row in sonuclar:
+                for row in sonuclar[:10]: # Limit for display
                     res_table.add_row(str(row.ebeveyn).split('#')[-1], str(row.cocuk).split('#')[-1])
                 
                 console.print(res_table)
             else:
-                console.print("[yellow]Sonuç bulunamadı.[/yellow]")
+                console.print("[yellow]⚠️ Bu ontolojik katmanda henüz veri bulunamadı.[/yellow]")
 
     except Exception as e:
         console.print(f"[bold red]Kritik Hata:[/bold red] {str(e)}")
         sys.exit(1)
+
+if __name__ == "__main__":
+    main()

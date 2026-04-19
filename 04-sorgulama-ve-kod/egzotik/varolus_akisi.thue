@@ -1,0 +1,7 @@
+# Varlık Akışı - Thue Meta Ontolojisi
+Hiclik::=Varlik
+Varlik::=Töz
+Töz::=Akis
+Akis::=Hakikat
+::=
+Hiclik

@@ -1,0 +1,10 @@
+Varlik::=Gozlem
+Gozlem::=Bilgi
+Bilgi::=Hikmet
+Hikmet::=Varlik
+Varlik::=~Varlik tecelli ediyor...
+Gozlem::=~Gozlem yapiliyor...
+Bilgi::=~Bilgi oluşuyor...
+Hikmet::=~Hikmet bulundu.
+::=
+Varlik
