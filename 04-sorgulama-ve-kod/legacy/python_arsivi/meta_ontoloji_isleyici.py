@@ -36,16 +36,16 @@ ETICARET_OWL: str = os.path.join(MIZAN_DIZINI, "e-ticaret.owl")
 EGZOTIK_DIZIN: str = os.path.join(PROJE_DIZINI, "egzotik")
 
 
-class MetaOntolojiZehni:
-    """Varlığın dijital izdüşümlerini (ontolojileri) işleyen üst-akıl aracı."""
+class NoesOntologike:
+    """Varlığın (On) dijital izdüşümlerini işleyen üst-akıl (Noes) aracı."""
 
     def __init__(self, dosya_yolu: str):
         self.dosya_yolu = dosya_yolu
         self.g = Graph()
         self._tezahur_ettir()
 
-    def _tezahur_ettir(self) -> None:
-        """Dosyayı sisteme dahil eder ve ontolojik grafı oluşturur."""
+    def _ekstasis_ettir(self) -> None:
+        """Kodu sisteme dahil eder ve ontolojik grafı (Graph) oluşturur."""
         if not os.path.exists(self.dosya_yolu):
             console.print(f"[bold red]Hata:[/bold red] Varlık dosyası bulunamadı: {self.dosya_yolu}")
             raise FileNotFoundError(self.dosya_yolu)
@@ -55,51 +55,51 @@ class MetaOntolojiZehni:
             TextColumn("[progress.description]{task.description}"),
             transient=True,
         ) as progress:
-            progress.add_task(description=f"🌌 Ontolojik düzlem yükleniyor: {os.path.basename(self.dosya_yolu)}...", total=None)
+            progress.add_task(description=f"🌌 Ontologikos Plain yükleniyor: {os.path.basename(self.dosya_yolu)}...", total=None)
             try:
                 self.g.parse(self.dosya_yolu, format="xml")
             except Exception as e:
                 console.print(f"[bold red]Tezahür hatası:[/bold red] {str(e)}")
                 raise
 
-    def hakikat_ozeti(self) -> Panel:
-        """Ontolojinin özünü (summary) görsel bir tablo ile sunar."""
+    def alitheia_synopsis(self) -> Panel:
+        """Ontolojinin özünü (Alitheia) görsel bir tablo ile sunar."""
         
         table = Table(show_header=True, header_style="bold cyan", box=None)
-        table.add_column("Metrik", style="dim")
-        table.add_column("Değer", style="bold green")
+        table.add_column("Metrikon", style="dim")
+        table.add_column("Monas", style="bold green")
 
-        table.add_row("Toplam Üçlü (Triple)", str(len(self.g)))
+        table.add_row("TripleCount", str(len(self.g)))
         
-        siniflar = list(self.g.subjects(RDF.type, OWL.Class))
-        table.add_row("Sınıf Sayısı", str(len(siniflar)))
+        classes = list(self.g.subjects(RDF.type, OWL.Class))
+        table.add_row("Classis", str(len(classes)))
             
-        bireyler = list(self.g.subjects(RDF.type, OWL.NamedIndividual))
-        table.add_row("Birey Sayısı", str(len(bireyler)))
+        individuals = list(self.g.subjects(RDF.type, OWL.NamedIndividual))
+        table.add_row("Individuum", str(len(individuals)))
 
-        return Panel(table, title=f"📜 {os.path.basename(self.dosya_yolu)} Yapısı", border_style="bright_blue")
+        return Panel(table, title=f"📜 {os.path.basename(self.dosya_yolu)} Synopsis", border_style="bright_blue")
 
-    def hikmet_uret(self) -> Panel:
-        """Ontolojik veriden rastgele felsefi çıkarımlar üretir."""
-        siniflar = [str(s).split('#')[-1] for s in self.g.subjects(RDF.type, OWL.Class) if '#' in str(s)]
-        if not siniflar:
-             siniflar = ["Varlık", "Kavram", "Töz"]
+    def sophia_poiesis(self) -> Panel:
+        """Ontolojik veriden rastgele felsefi çıkarımlar (Sophia) üretir."""
+        classes = [str(s).split('#')[-1] for s in self.g.subjects(RDF.type, OWL.Class) if '#' in str(s)]
+        if not classes:
+             classes = ["On", "Logos", "Ousia"]
         
-        sablonlar = [
-            "İncelediğimiz [bold yellow]{0}[/bold yellow] kavramı, sistemin temel direğidir.",
-            "Eğer [bold yellow]{0}[/bold yellow] olmasaydı, ontolojik bütünlük bozulurdu.",
-            "Sistemdeki [bold yellow]{0}[/bold yellow] varlığı, hiyerarşinin üst basamaklarını işaret eder.",
-            "Dijital evrende [bold yellow]{0}[/bold yellow], tözün bir yansımasıdır.",
-            "[bold yellow]{0}[/bold yellow] ve diğer ilinekler, varlığın tezahür biçimleridir."
+        paradigms = [
+            "İncelediğimiz [bold yellow]{0}[/bold yellow] kavramı, Logos'un temel direğidir.",
+            "Eğer [bold yellow]{0}[/bold yellow] olmasaydı, ontolojik bütünlük (Hen) bozulurdu.",
+            "Sistemdeki [bold yellow]{0}[/bold yellow] varlığı (On), hiyerarşinin üst basamaklarını işaret eder.",
+            "Dijital evrende [bold yellow]{0}[/bold yellow], Ousia'nın bir yansımasıdır.",
+            "[bold yellow]{0}[/bold yellow] ve diğer symbebekoslar, varlığın tezahür biçimleridir."
         ]
         
-        insight = random.choice(sablonlar).format(random.choice(siniflar))
-        return Panel(Align.center(insight), title="🧠 Ontolojik Hikmet", border_style="magenta")
+        insight = random.choice(paradigms).format(random.choice(classes))
+        return Panel(Align.center(insight), title="🧠 Ontologikos Sophia", border_style="magenta")
 
-    def derin_sorgu(self, sorgu: str) -> List[ResultRow]:
-        """SPARQL ile varlığın derinliklerine iner."""
+    def bathys_ereuna(self, query: str) -> List[ResultRow]:
+        """SPARQL ile varlığın (On) derinliklerine iner."""
         try:
-            results = self.g.query(sorgu)
+            results = self.g.query(query)
             return list(results)
         except Exception as e:
             console.print(f"[bold red]Sorgu hatası:[/bold red] {str(e)}")
@@ -122,14 +122,14 @@ class MetaOntolojiZehni:
         console.print(Panel(table, title="[bold red]KRİTİK VERİ[/bold red]", subtitle="Alternatif Gerçeklikler", border_style="red"))
 
 
-def main():
+def protos():
     console.clear()
-    console.print(Panel.fit("🌌 [bold white]META-ONTOLOJİ İŞLEYİCİ v2.0[/bold white] 🌌\n[dim]Varlık, Bilgi ve Hakikat Üzerine Bir Algoritmik Yolculuk[/dim]", border_style="purple"))
+    console.print(Panel.fit("🌌 [bold white]NOES-ONTOLOGIKE ISLEYICI v1.0 [ARCHIVE][/bold white] 🌌\n[dim]On, Logos ve Alitheia Üzerine Bir Algoritmikos Kinema[/dim]", border_style="purple"))
     
     try:
         # Aile Ontolojisi Analizi
         if os.path.exists(AILE_OWL):
-            akil = MetaOntolojiZehni(AILE_OWL)
+            mind = NoesOntologike(AILE_OWL)
             
             # TUI Layout
             layout = Layout()
@@ -138,31 +138,31 @@ def main():
                 Layout(name="lower")
             )
             layout["upper"].split_row(
-                Layout(name="ozet"),
-                Layout(name="insight")
+                Layout(name="synopsis"),
+                Layout(name="sophia")
             )
             
-            layout["ozet"].update(akil.hakikat_ozeti())
-            layout["insight"].update(akil.hikmet_uret())
+            layout["synopsis"].update(mind.alitheia_synopsis())
+            layout["sophia"].update(mind.sophia_poiesis())
             
             console.print(layout)
             
             # SPARQL Sorgusu
-            sorgu = """
+            query = """
             PREFIX aile: <http://www.example.org/ontologies/aile-agaci#>
             SELECT ?ebeveyn ?cocuk
             WHERE {
                 ?ebeveyn aile:ebeveynidir ?cocuk .
             }
             """
-            sonuclar = akil.derin_sorgu(sorgu)
+            results = mind.bathys_ereuna(query)
             
-            if sonuclar:
-                res_table = Table(title="🔍 Hakikat Sorgusu: Ebeveyn-Çocuk İlişkileri", show_header=True, header_style="bold green")
+            if results:
+                res_table = Table(title="🔍 Alitheia Ereuna: Ebeveyn-Çocuk İlişkileri", show_header=True, header_style="bold green")
                 res_table.add_column("Ebeveyn", style="blue")
                 res_table.add_column("Çocuk", style="yellow")
                 
-                for row in sonuclar[:10]: # Limit for display
+                for row in results[:10]: # Limit for display
                     res_table.add_row(str(row.ebeveyn).split('#')[-1], str(row.cocuk).split('#')[-1])
                 
                 console.print(res_table)
@@ -170,12 +170,12 @@ def main():
                 console.print("[yellow]⚠️ Bu ontolojik katmanda henüz veri bulunamadı.[/yellow]")
 
             if EGZOTIK_MOD:
-                akil.egzotik_laboratuvar_ozeti()
+                mind.exotikos_ergasterion_synopsis()
 
 
     except Exception as e:
-        console.print(f"[bold red]Kritik Hata:[/bold red] {str(e)}")
+        console.print(f"[bold red]Kritikon Hata:[/bold red] {str(e)}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    main()
+    protos()
