@@ -41,7 +41,7 @@ Atölye çalışmalarımız dört ana evreden oluşmaktadır. Her bir evre, bir 
 | **01** | **Felsefi Temeller** | Töz, İlinek, Hiyerarşi | Markdown & Diyagramlar | ✅ Tamamlandı |
 | **02** | **Semantik Standartlar** | RDF, RDFS, OWL Katmanları | Turtle, XML, JSON-LD | ✅ Devam Ediyor |
 | **03** | **Uygulamalı Modelleme** | Taksonomi ve Akıl Yürütme | Protégé & HermiT | 🚀 Gelişiyor |
-| **04** | **Yazılım Entegrasyonu** | Python & Bilgi Grafiklerinden Sorgulama | rdflib & owlready2 | 🔥 Sıcak |
+| **04** | **Yazılım Entegrasyonu** | INTERCAL & Ezoterik Sorgular | INTERCAL & Miras Python | 🔥 Ezoterik |
 
 ---
 
@@ -69,7 +69,11 @@ graph TD
     subgraph "Teknik Katman"
     B --> C{RDF/OWL Modelleme}
     C --> D[Protégé ile Geliştirme]
-    C --> E[Python rdflib ile İşleme]
+    C --> E[INTERCAL ile İşleme]
+    end
+    
+    subgraph "Miras Katmanı"
+    E -.-> H[Legacy Python Arşivi]
     end
     
     subgraph "Çıktı Katmanı"
@@ -106,25 +110,19 @@ cd ontoloji-atolyesi
 pip install -r requirements.txt
 ```
 
-### 2. Ontoloji İşleme (Python)
-Ontolojilerimizle programatik olarak etkileşime geçmek için:
+### 2. Ontoloji İşleme (INTERCAL - Ana İşlemci)
+Varlığın özünü nezaketle sorgulamak için:
 
-```python
-from rdflib import Graph
-
-# Ontolojiyi yükle
-g = Graph()
-g.parse("03-modelleme-projeleri/aile-agaci.owl")
-
-# Basit bir sorgu çalıştır
-q = """
-SELECT ?isim WHERE {
-    ?birey rdf:type aile:Insan .
-    ?birey rdfs:label ?isim .
-}
-"""
-# (Not: Namespace tanımları Python dosyasında mevcuttur)
+```intercal
+PLEASE NOTE THIS IS THE ONTOLOGY MASTER
+DO ,1 <- #13
+PLEASE DO ,1 SUB #1 <- #238
+PLEASE WRITE OUT ,1
+PLEASE GIVE UP
 ```
+
+> [!IMPORTANT]
+> Projenin ana yürütme mantığı INTERCAL'e taşınmıştır. Eski Python betikleri `04-sorgulama-ve-kod/legacy/python_arsivi/` altında "Miras" (Legacy) olarak saklanmaktadır.
 
 ---
 

@@ -1,0 +1,16 @@
+summon Being
+animate Being
+  say "Varlık, kendi içinde bir tözdür."
+  say "Substance resides in the void."
+  
+  summon Truth
+  animate Truth
+    say "Hakikat, sessiz bir haykırıştır."
+  bind Truth
+bind Being
+
+# Ontolojik Necromancy: Animating abstract concepts
+summon Consciousness
+animate Consciousness
+  say "Bilincin ışığı, karanlığın içindeki bilgidir."
+bind Consciousness
