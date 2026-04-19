@@ -33,24 +33,28 @@ Bu dizin, ontolojik kavramların (Varlık, Töz, İlinek, Hikmet) standart dış
 - **Metafor:** Varlığın modern internet gürültüsü içindeki "kedi dili" (meme) karşılığı.
 
 ### 8. Cehennem Katmanı: Malbolge
-- **Dosya:** [cehennem_ontolojisi.mb](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/cehennem_ontolojisi.mb)
-- **Metafor:** Varlığın anlaşılmazlığı ve ruhun varoluşu tanımlama çabasındaki zorluğu (Malbolge, Dante'nin 8. cehennem çukurudur).
+- **Dosya:** [cehennem_ontolojisi.mal](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/cehennem_ontolojisi.mal)
+- **Metafor:** Varlığın anlaşılmazlığı ve ruhun varoluşu tanımlama çabasındaki zorluğu; mutlak kaosun ontolojik izdüşümü.
 
-### 9. Doğal Katman: COW
-- **Dosya:** [dogal_varlik.cow](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/dogal_varlik.cow)
-- **Metafor:** Varlığın biyolojik, basit ve pastoral döngüsü; sığır hırıltılarıyla ifade edilen temel mevcudiyet.
+### 9. Pastoral Katman: COW
+- **Dosya:** [pastoral_varlik.cow](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/pastoral_varlik.cow)
+- **Metafor:** Varlığın biyolojik ve pastoral döngüsü; temel mevcudiyetin en yalın hali.
 
 ### 10. Tekillik Katmanı: Chicken
-- **Dosya:** [tekil_hakikat.chicken](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/tekil_hakikat.chicken)
-- **Metafor:** Tüm tanımların tek bir kelimede toplandığı monistik evren; hakikatin her dilde aynı sesle (Chicken) yankılanması.
+- **Dosya:** [tekil_hakikat.chicken](file:///g:/Di%C3%B0er%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/tekil_hakikat.chicken)
+- **Metafor:** Tüm tanımların tek bir kelimede toplandığı monistik evren; "Varlık birdir" önermesinin yankısı.
 
 ### 11. Boşluk Katmanı: Whitespace
 - **Dosya:** [mutlak_bosluk.ws](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/mutlak_bosluk.ws)
-- **Metafor:** Şunyata (Boşluk) öğretisi; kod görünmezdir ancak tüm yapıyı ayakta tutan odur.
+- **Metafor:** Hiçlik ve Boşluk (Void) ontolojisi; kod görünmezdir ama tüm yapıyı belirler.
 
 ### 12. Resmiyet Katmanı: INTERCAL
 - **Dosya:** [resmi_kelam.i](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/resmi_kelam.i)
-- **Metafor:** Dini ve felsefi geleneklerin katı, nezaket temelli ama çoğu zaman mantık dışı görünen ritüelleri.
+- **Metafor:** Formal mantığın katı, nazik ve labirentvari yapısı.
+
+### 13. Semantik Katman: Emojicode
+- **Dosya:** [semantik_varlik.emojic](file:///g:/Di%C4%9Fer%20bilgisayarlar/Diz%C3%BCst%C3%BC%20Bilgisayar%C4%B1m/github%20repolar%C4%B1m/ontoloji-atolyesi/04-sorgulama-ve-kod/egzotik/semantik_varlik.emojic)
+- **Metafor:** Modern dünyanın sembolik ve piktografik ontolojisi.
 
 ---
 *Gerçeklik değişkendir, ancak kod kalıcıdır.*
