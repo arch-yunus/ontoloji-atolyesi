@@ -1,78 +1,168 @@
-# 🧠 Ontoloji Atölyesi (ontoloji-atolyesi)
-> **"Varlığı Veriye, Veriyi Bilgiye Dönüştürme Merkezi"**
+<p align="center">
+  <img src="docs/images/banner.png" width="100%" alt="Ontoloji Atölyesi Banner">
+</p>
 
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
-[![Topic](https://img.shields.io/badge/Topic-Ontology_&_Semantics-blue.svg)]()
-[![Tools](https://img.shields.io/badge/Tools-Protege_&_RDFLib-orange.svg)]()
+<p align="center">
+  <img src="docs/images/logo.png" width="150" alt="Ontoloji Atölyesi Logo">
+</p>
 
----
+<h1 align="center">🧠 Ontoloji Atölyesi (ontoloji-atolyesi)</h1>
 
-## 🚀 Vizyon
+<p align="center">
+  <strong>"Varlığı Veriye, Veriyi Bilgiye, Bilgiyi Hikmete Dönüştürme Merkezi"</strong>
+</p>
 
-"Varlık nedir?" sorusundan yola çıkıp, "Bir bilgisayara dünyayı nasıl anlatırız?" sorusuna yanıt arıyoruz. Bu atölye, felsefi ontolojiyi modern dünya teknolojileriyle (Yapay Zeka, Bilgi Mühendisliği, Semantik Web) harmanlayan derinlemesine bir öğrenme yolculuğudur.
-
----
-
-## 📚 Müfredat Yol Haritası
-
-| Aşama | Başlık | İçerik | Detay |
-| :--- | :--- | :--- | :--- |
-| **01** | **Teorik Temeller** | Töz, İlinek, Evrenseller | [İncele](01-teori-ve-felsefe/temel-kavramlar.md) |
-| **02** | **Teknik Standartlar** | RDF, RDFS, OWL | [İncele](02-teknik-standartlar/rdf-rdfs-giris.md) |
-| **03** | **Modelleme** | Aile Ağacı, E-Ticaret | [İncele](03-modelleme-projeleri/) |
-| **04** | **Sorgulama** | SPARQL & Python | [İncele](04-sorgulama-ve-kod/) |
+<p align="center">
+  <a href="https://github.com/arch-yunus/ontoloji-atolyesi/stargazers"><img src="https://img.shields.io/github/stars/arch-yunus/ontoloji-atolyesi?style=for-the-badge&color=gold" alt="Stars"></a>
+  <a href="https://github.com/arch-yunus/ontoloji-atolyesi/network/members"><img src="https://img.shields.io/github/forks/arch-yunus/ontoloji-atolyesi?style=for-the-badge&color=blue" alt="Forks"></a>
+  <a href="https://github.com/arch-yunus/ontoloji-atolyesi/issues"><img src="https://img.shields.io/github/issues/arch-yunus/ontoloji-atolyesi?style=for-the-badge&color=red" alt="Issues"></a>
+  <img src="https://img.shields.io/badge/Status-Arşa_Çıkıyor-brightgreen?style=for-the-badge" alt="Status">
+</p>
 
 ---
 
-## 🏗️ Örnek Ontoloji Hiyerarşisi
+## 🌟 Vizyon ve Motivasyon
 
-Sistemlerimizde sınıflar arası ilişkileri (Taksonomi) ve parça-bütün ilişkilerini (Meronimi) şu şekilde modelliyoruz:
+"Varlık nedir?" sorusu binlerce yıldır felsefenin merkezinde yer almıştır. Bugün ise bu soru, **Yapay Zeka** ve **Semantik Web** dünyasının en teknik sorularından biri haline geldi: *"Bir bilgisayara dünyayı nasıl anlatırız?"*
+
+**Ontoloji Atölyesi**, bu felsefi derinliği modern veri standartlarıyla (RDF, OWL, SPARQL) birleştiren kapsamlı bir laboratuvardır. Amacımız, sadece veri depolamak değil, veriler arasındaki **anlamsal ilişkileri** modelleyerek bilgisayarların "anlamasını" sağlamaktır.
+
+> [!TIP]
+> Bir veri tabanı "ne olduğunu" bilir, bir ontoloji ise "neden öyle olduğunu" ve "ne anlama geldiğini" açıklar.
+
+---
+
+## 🗺️ Müfredat Yol Haritası (Master Plan)
+
+Atölye çalışmalarımız dört ana evreden oluşmaktadır. Her bir evre, bir sonrakinin temelini oluşturur.
+
+| Aşama | Başlık | Fokus | Teknik Araçlar | Durum |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **Felsefi Temeller** | Töz, İlinek, Hiyerarşi | Markdown & Diyagramlar | ✅ Tamamlandı |
+| **02** | **Semantik Standartlar** | RDF, RDFS, OWL Katmanları | Turtle, XML, JSON-LD | ✅ Devam Ediyor |
+| **03** | **Uygulamalı Modelleme** | Taksonomi ve Akıl Yürütme | Protégé & HermiT | 🚀 Gelişiyor |
+| **04** | **Yazılım Entegrasyonu** | Python & Bilgi Grafiklerinden Sorgulama | rdflib & owlready2 | 🔥 Sıcak |
+
+---
+
+## 📖 Temel Kavramlar Sözlüğü
+
+Burası sadece kod değil, aynı zamanda bir bilgi hazinesidir.
+
+- **Töz (Substance):** Kendi başına var olan şey (Örn: İnsan).
+- **İlinek (Accident):** Tözün bir özelliği (Örn: İnsanın rengi, boyu).
+- **Sınıf (Class) / Concept:** Varlıkların hiyerarşik gruplandırılması.
+- **Birey (Individual):** Sınıfın somut örneği (Örn: Sokrates bir İnsan'dır).
+- **Özellik (Property):** Sınıflar arası ilişkiler (Örn: `babasıdır`, `çalışanıdır`).
+- **Aksiyom (Axiom):** Ontolojideki kesin doğrular ve kurallar.
+
+---
+
+## 🏗️ Mimari Yapı
 
 ```mermaid
 graph TD
-    V[Varlık/Thing] --> C[Canlı]
-    C --> H[Hayvan]
-    H --> M[Memeli]
-    M --> K[Kedi]
-    
-    subgraph "Meronimi (Parça-Bütün)"
-    K --- P[Patiler]
-    K --- G[Gözler]
+    subgraph "Felsefi Katman"
+    A[Kavramsal Analiz] --> B[Alan Ontolojisi Tasarımı]
     end
     
-    style K fill:#f9f,stroke:#333,stroke-width:4px
+    subgraph "Teknik Katman"
+    B --> C{RDF/OWL Modelleme}
+    C --> D[Protégé ile Geliştirme]
+    C --> E[Python rdflib ile İşleme]
+    end
+    
+    subgraph "Çıktı Katmanı"
+    D --> F[Bilgi Grafikleri]
+    E --> G[Akıllı Sorgular / SPARQL]
+    end
+    
+    style A fill:#1a1a1a,stroke:#00d9ff,color:#fff
+    style G fill:#ffd700,stroke:#333,color:#000
 ```
 
 ---
 
-## 📂 Klasör Yapısı
+## 📂 Klasör Yapısı ve İçerikler
 
-```text
-ontoloji-atolyesi/
-├── 01-teori-ve-felsefe/       # Makaleler ve temel terminoloji
-├── 02-teknik-standartlar/     # RDF, OWL teknik notlar
-├── 03-modelleme-projeleri/    # .owl uzantılı örnek projeler
-├── 04-sorgulama-ve-kod/       # SPARQL ve Python uygulamaları
-└── docs/                      # Faydalı kaynaklar
+Aşağıdaki yapı, atölyenin öğrenme eğrisini yansıtır:
+
+- 📂 **[01-teori-ve-felsefe](01-teori-ve-felsefe/):** Aristoteles'ten modern bilgi mühendisliğine kadar uzanan teorik notlar.
+- 📂 **[02-teknik-standartlar](02-teknik-standartlar/):** W3C standartları, RDF üçlüleri (Triples) ve OWL 2 rehberleri.
+- 📂 **[03-modelleme-projeleri](03-modelleme-projeleri/):** `.owl` uzantılı, Protégé ile açılabilen somut modeller. (Aile ağacı, E-ticaret vb.)
+- 📂 **[04-sorgulama-ve-kod](04-sorgulama-ve-kod/):** Python betikleri ve SPARQL sorgu örnekleri.
+- 📂 **[docs](docs/):** Kurulum rehberleri ve ek kaynaklar.
+
+---
+
+## 🚀 Başlıyoruz (Quick Start)
+
+### 1. Ortam Kurulumu
+Öncelikle gerekli kütüphaneleri yükleyin:
+
+```bash
+git clone https://github.com/arch-yunus/ontoloji-atolyesi.git
+cd ontoloji-atolyesi
+pip install -r requirements.txt
+```
+
+### 2. Ontoloji İşleme (Python)
+Ontolojilerimizle programatik olarak etkileşime geçmek için:
+
+```python
+from rdflib import Graph
+
+# Ontolojiyi yükle
+g = Graph()
+g.parse("03-modelleme-projeleri/aile-agaci.owl")
+
+# Basit bir sorgu çalıştır
+q = """
+SELECT ?isim WHERE {
+    ?birey rdf:type aile:Insan .
+    ?birey rdfs:label ?isim .
+}
+"""
+# (Not: Namespace tanımları Python dosyasında mevcuttur)
 ```
 
 ---
 
-## 🛠️ Kullanılan Araçlar
+## 🛠️ Araç Setimiz
 
-1. **[Protégé Desktop](https://protege.stanford.edu/):** Dünyanın en popüler açık kaynak ontoloji editörü.
-2. **Python `rdflib`:** Ontolojileri kod ile yönetmek için.
-   ```bash
-   pip install rdflib
-   ```
+Profesyonellerin kullandığı, atölyemizin temelini oluşturan araçlar:
+
+1.  **[Protégé Desktop](https://protege.stanford.edu/):** Açık kaynaklı, genişletilebilir ontoloji editörü.
+2.  **[GraphDB](https://www.ontotext.com/products/graphdb/):** Yüksek performanslı anlamsal veri tabanı.
+3.  **[Python rdflib](https://github.com/RDFLib/rdflib):** Kod ile ontoloji manipülasyonu.
+4.  **[OWLready2](https://owlready2.readthedocs.io/):** Python nesneleri ile ontolojiyi eşleştiren güçlü araç.
+5.  **[Shakespeare SPL](https://shakespearelang.com/):** Egzotik ve sanatsal varlık modelleme dili.
+6.  **[Prolog](https://www.swi-prolog.org/):** Saf mantık ve aksiyom çözümleme dili.
+
+---
+
+## 🎨 Egzotik ve Mantıksal Paradigmalar
+
+Atölyemizde sadece standart diller değil, varlığın doğasına farklı açılardan bakan paradigmalar da kullanılır:
+
+- **Artistic Ontology (SPL):** `04-sorgulama-ve-kod/egzotik/` altında Aristoteles ve Platon'un diyalogları üzerinden varlık "hesaplamaları" yapılır.
+- **Logical Reasoning (Prolog):** `04-sorgulama-ve-kod/mantik/` altında tümdengelimsel akıl yürütme kuralları ile ontolojik sorgular çözülür.
 
 ---
 
 ## 🤝 Katkıda Bulunma
 
-Bu bir açık atölyedir! Farklı alanlarda (E-ticaret, Tıp, Mimari vb.) ontoloji modelleri eklemek isterseniz lütfen Pull Request gönderin.
+Bu atölye sürekli büyüyen bir organizmadır! Eğer:
+- Yeni bir felsefi makale yazmak,
+- Karmaşık bir `.owl` modeli eklemek,
+- SPARQL sorguları optimize etmek isterseniz...
+
+Lütfen bir **Fork** oluşturun ve **Pull Request** gönderin. Sizin de bir "Varlık" tanımınız olsun!
 
 ---
+
 <p align="center">
-  <i>"Sözcükler arasındaki ilişkiler, dünyanın dokusunu oluşturur."</i>
+  <i>"Veri sadece birer rakamdır, anlam ise o rakamların birbirine duyduğu bağlılıkta saklıdır."</i>
+  <br>
+  <strong>Ontoloji Atölyesi - 2024</strong>
 </p>
